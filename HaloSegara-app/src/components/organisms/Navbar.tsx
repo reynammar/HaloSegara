@@ -2,14 +2,14 @@ import { useState } from "react";
 import Button from "../atoms/Button";
 import NavMenu from "../molecules/NavMenu";
 import { Link } from "react-router";
-import logo from "../../assets/logoMovies.svg";
+import logo from "../../assets/logo.svg"
 import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between bg-white items-center px-14 py-3 w-full shadow-md shadow-black">
+    <nav className="flex justify-between bg-blue-500 items-center px-14 py-3 w-full shadow-md shadow-black">
       <Link to="/">
         <img src={logo} alt="ReynMovies" className="w-28" />
       </Link>
