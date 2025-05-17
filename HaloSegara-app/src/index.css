@@ -1,1 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+:root {
+  --font-primary: 'Poppins', sans-serif;
+}
+
+html {
+  font-family: var(--font-primary);
+}
+
+@theme {
+    /* Primary Color */
+    --color-primary50: #B5C5E5;
+    --color-primary100: #849FD3;
+    --color-primary300: #3965B9;
+    --color-primary500: #083EA7;
+    --color-primary700: #063286;
+    --color-primary800: #041F54;
+    --color-primary900: #021332;
+
+    /* Secondary Color */
+    --color-secondary50: #BCF5DE;
+    --color-secondary100: #8FEFC8;
+    --color-secondary300: #4CE5A7;
+    --color-secondary500: #1FDE91;
+    --color-secondary700: #19B274;
+    --color-secondary800: #106F49;
+    --color-secondary900: #09432B;
+
+    /* Information Color */
+    --color-info50: #BCCDF5;
+    --color-info100: #8FACEF;
+    --color-info300: #4C79E5;
+    --color-info500: #1F51DE;
+    --color-info700: #1946B2;
+    --color-info800: #102C6F;
+    --color-info900: #091843;
+
+    /* Danger Color */
+    --color-danger50: #F5BCBC;
+    --color-danger100: #EF8F8F;
+    --color-danger300: #E54C4C;
+    --color-danger500: #DE1F1F;
+    --color-danger700: #B21919;
+    --color-danger800: #6F1010;
+    --color-danger900: #430909;
+
+    /* Warning Color */
+    --color-warning50: #FFFCB3;
+    --color-warning100: #FFFB80;
+    --color-warning300: #FFF833;
+    --color-warning500: #FFF600;
+    --color-warning700: #CCC500;
+    --color-warning800: #807B00;
+    --color-warning900: #4C4A00;
+
+    /* Success Color */
+    --color-success50: #CAF5BC;
+    --color-success100: #A7EF8F;
+    --color-success300: #72E54C;
+    --color-success500: #4FDE1F;
+    --color-success700: #3FB219;
+    --color-success800: #286F10;
+    --color-success900: #184309;
+
+    /* Neutral Color */
+    --color-neutral50: #C7C8CC;
+    --color-neutral100: #A2A4AA;
+    --color-neutral300: #696D77;
+    --color-neutral500: #444955;
+    --color-neutral700: #363A44;
+    --color-neutral800: #22252B;
+    --color-neutral900: #141619;
+
+    /* Typography Size */
+    --text-extrasmall: 1.25rem;
+    --text-small: 1.5rem;
+    --text-medium: 2rem;
+    --text-large: 2.25rem;
+    --text-extralarge: 2.5rem;
+    --text-superlarge: 3.75rem;
+
+    /* Line Height Text */
+    --leading-md: 24px;
+    --leading-lg: 32px;
+}
