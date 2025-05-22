@@ -1,9 +1,15 @@
+import HomeSection from "../components/organisms/HeroSection";
+import FeatureSection from "../components/organisms/FeatureSection";
+import MitraSection from "../components/organisms/MitraSection";
+
 const Home = () => {
-    return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    )
+  return(
+    <main className="font-poppins text-black">
+      <HomeSection/>
+      <FeatureSection/>
+      <MitraSection/>
+    </main>
+  )
 }
 
 export default Home

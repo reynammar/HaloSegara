@@ -5,14 +5,22 @@ interface ButtonProps {
   children: ReactNode;
   className?: string;
   type?: "button" | "submit" | "reset";
+  disabled?: boolean;
 }
 
-const Button = ({ onClick, children, className = "", type = "button" }: ButtonProps) => {
+const Button = ({
+  onClick,
+  children,
+  className = "",
+  type = "button",
+  disabled = false,
+}: ButtonProps) => {
   return (
     <button
       onClick={onClick}
       type={type}
-      className={`px-6 py-2 font-bold text-base rounded bg-[#0d0907] text-red-500 hover:bg-[#241010] transition ${className}`}
+      disabled={disabled}
+      className={`transition focus:outline-none ${className}`}
     >
       {children}
     </button>
