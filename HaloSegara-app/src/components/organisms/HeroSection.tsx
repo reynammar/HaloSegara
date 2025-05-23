@@ -14,11 +14,11 @@ import flag from "../../assets/Flag.svg";
 import gift from "../../assets/Gift.svg";
 import box from "../../assets/Package.svg";
 import Medal from "../../assets/medali.svg";
+import { beachData } from "../../data/beachData";
 
 const HeroSection = () => {
   const navigate = useNavigate();
 
-  // ref untuk swiper container
   const cardContainerRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -97,7 +97,6 @@ const HeroSection = () => {
               Temukan Surga Tersembunyi dan Pantai Terbersih dengan Mudah
             </p>
           </div>
-          {/* Tombol Navigasi */}
           <div className="flex gap-3">
             <Button
               type="button"
@@ -129,14 +128,17 @@ const HeroSection = () => {
             </Button>
           </div>
         </div>
-
-        {/* Card content swiper */}
         <div
           ref={cardContainerRef}
           className="flex gap-4 overflow-x-auto scrollbar-hide pl-14 pr-14 pb-8"
         >
-          {[...Array(6)].map((_, i) => (
-            <BeachCard key={i} index={i + 1} />
+          {beachData.slice(0, 10).map((beach) => (
+            <BeachCard
+              key={beach.id}
+              title={beach.title}
+              location={beach.location}
+              imageUrl={beach.imageUrl}
+            />
           ))}
         </div>
       </div>

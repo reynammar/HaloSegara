@@ -1,15 +1,16 @@
 import HomeSection from "../components/organisms/HeroSection";
 import FeatureSection from "../components/organisms/FeatureSection";
 import MitraSection from "../components/organisms/MitraSection";
+import mitraImage from "../assets/MitraImage.jpg"
 
 const Home = () => {
-  return(
+  return (
     <main className="font-poppins text-black">
-      <HomeSection/>
-      <FeatureSection/>
-      <MitraSection/>
+      <HomeSection />
+      <FeatureSection />
+      <MitraSection backgroundImage={mitraImage} />
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

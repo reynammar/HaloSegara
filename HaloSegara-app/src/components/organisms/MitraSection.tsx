@@ -1,11 +1,18 @@
 import { ArrowRight } from "lucide-react";
 import Button from "../atoms/Button";
-import image from "../../assets/MitraImage.jpg";
 
-const MitraSection = () => {
+interface MitraSectionProps {
+  backgroundImage: string;
+}
+
+const MitraSection = ({ backgroundImage }: MitraSectionProps) => {
   return (
     <section className="relative flex flex-col gap-8 justify-center items-center">
-      <img src={image} alt="Mitra Section" className="w-full h-auto block" />
+      <img
+        src={backgroundImage}
+        alt="Mitra Section"
+        className="w-full h-auto block"
+      />
       <div className="absolute inset-0 bg-black/50"></div>
       <div className="absolute flex flex-col gap-4 justify-center items-center text-center max-w-[750px] text-white px-4">
         <h4 className="font-bold text-extralarge">
@@ -26,7 +33,7 @@ const MitraSection = () => {
             Pelajari Lebih Lanjut
           </Button>
           <Button
-            className="px-6 py-3 bg-secondary500 text-black rounded-md font-inter font-semibold flex items-center min-w-[223px] justify-center"
+            className="px-6 py-3 bg-secondary500 hover:bg-secondary700 text-black rounded-md font-inter font-semibold flex items-center min-w-[223px] justify-center cursor-pointer"
             type="button"
           >
             Gabung
