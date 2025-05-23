@@ -7,33 +7,38 @@ import SupportMenu from "../molecules/SupportMenu";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary500 flex justify-between items-center px-20 py-16 w-full">
-      <div className="flex flex-col gap-7">
-        <Link to="/">
-          <img src={logo} alt="ReynMovies" className="w-44" />
-        </Link>
+    <footer className="bg-primary500 flex flex-col">
+      <div className="flex justify-between items-center px-20 py-16 w-full">
+        <div className="flex flex-col gap-7">
+          <Link to="/">
+            <img src={logo} alt="ReynMovies" className="w-44" />
+          </Link>
 
-        <FooterContact />
+          <FooterContact />
 
-        <FooterSosmed />
+          <FooterSosmed />
+        </div>
+
+        <div className="flex gap-14">
+          <div className="flex flex-col items-center gap-4">
+            <div className="border-b-2 border-white text-sm py-2">
+              <h3>HaloSegara</h3>
+            </div>
+            <NavMenu
+              className="flex-col justify-center items-center gap-4 text-sm"
+              withUnderline={false}
+            />
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <div className="border-b-2 border-white text-sm py-2">
+              <h3>Support</h3>
+            </div>
+            <SupportMenu className="flex-col justify-center items-center gap-4 text-sm" />
+          </div>
+        </div>
       </div>
-
-      <div className="flex gap-14">
-        <div className="flex flex-col items-center gap-4">
-          <div className="border-b-2 border-white text-sm py-2">
-            <h3>HaloSegara</h3>
-          </div>
-          <NavMenu
-            className="flex-col justify-center items-center gap-4 text-sm"
-            withUnderline={false}
-          />
-        </div>
-        <div className="flex flex-col items-center gap-4">
-          <div className="border-b-2 border-white text-sm py-2">
-            <h3>Support</h3>
-          </div>
-          <SupportMenu className="flex-col justify-center items-center gap-4 text-sm" />
-        </div>
+      <div className="bg-primary700 flex justify-center items-center p-4">
+        <span className="font-inter font-bold text-xs">© 2025 HaloSegara. All rights reserved.</span>
       </div>
     </footer>
   );

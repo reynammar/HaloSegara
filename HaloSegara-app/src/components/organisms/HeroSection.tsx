@@ -64,6 +64,10 @@ const HeroSection = () => {
             textColor="text-info800"
             imgSrc={flag}
             extraClass="mt-14"
+            textSize="text-[40px]"
+            imgClass="w-40"
+            cardSize="w-[356px] h-[371px]"
+            descSize="text-[18px] leading-8"
           />
           <IconCard
             title="Eco Challenge"
@@ -72,6 +76,9 @@ const HeroSection = () => {
             textColor="text-secondary800"
             imgSrc={gift}
             imgClass="ml-36"
+            textSize="text-[40px]"
+            cardSize="w-[356px] h-[371px]"
+            descSize="text-[18px] leading-8"
           />
           <IconCard
             title="Mitra Penukaran Sampah"
@@ -81,6 +88,9 @@ const HeroSection = () => {
             imgSrc={box}
             imgClass="-mt-32 ml-36"
             extraClass="mt-14"
+            textSize="text-[40px]"
+            cardSize="w-[356px] h-[371px]"
+            descSize="text-[18px] leading-8"
           />
         </div>
       </div>

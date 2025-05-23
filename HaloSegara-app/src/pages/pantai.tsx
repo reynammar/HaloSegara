@@ -1,6 +1,6 @@
 import PantaiSection from "../components/organisms/PantaiSection";
 import MitraSection from "../components/organisms/MitraSection";
-import mitraImage from "../assets/MitraImage.jpg";
+import mitraImage from "../assets/MitraImage2.jpg";
 
 const Pantai = () => {
   return (

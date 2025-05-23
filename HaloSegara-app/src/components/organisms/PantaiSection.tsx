@@ -109,7 +109,6 @@ const PantaiSection = () => {
         )}
       </section>
 
-      {/* Modal peta statis */}
       <Modal isOpen={isMapModalOpen} onClose={closeModal}>
         <h2 className="font-inter text-4xl font-bold mb-8 text-center">
           Pilih Pantai Lewat Peta
