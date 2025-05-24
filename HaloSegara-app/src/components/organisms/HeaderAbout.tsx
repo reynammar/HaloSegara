@@ -4,7 +4,6 @@ import spiral2 from "../../assets/Spiral2.svg";
 const HeaderAbout = () => {
   return (
     <section className="relative flex flex-col justify-center items-center rounded-ee-[100px] rounded-es-[100px] overflow-hidden h-screen bg-primary500">
-      {/* Spiral 1 kiri atas */}
       <img
         src={spiral1}
         alt="Spiral 1"
@@ -22,7 +21,6 @@ const HeaderAbout = () => {
         </p>
       </div>
 
-      {/* Spiral 2 kanan bawah */}
       <img
         src={spiral2}
         alt="Spiral 2"
