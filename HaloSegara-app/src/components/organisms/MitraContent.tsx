@@ -1,17 +1,23 @@
-import { useState } from "react";
-import BeachCard from "../molecules/BeachCard";
+import HeaderSearch from "./HeaderSearch";
 import { beachData } from "../../data/beachData";
-import { ChevronLeft, ChevronRight, Circle } from "lucide-react";
-import HeaderSearch from "../organisms/HeaderSearch";
+import { useState } from "react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Circle,
+  CircleArrowRight,
+  MapPin,
+} from "lucide-react";
+import Button from "../atoms/Button";
 import Modal from "../molecules/ModalMaps";
 import mapImage from "../../assets/PetaMalang.png";
-import headerImage from "../../assets/Header.jpg";
+import headerImage from "../../assets/Header2.jpg";
 
-const PantaiSection = () => {
+const MitraContent = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 16;
+  const itemsPerPage = 8;
   const [searchTerm, setSearchTerm] = useState("");
-  const [isMapModalOpen, setIsMapModalOpen] = useState(false); // modal state
+  const [isMapModalOpen, setIsMapModalOpen] = useState(false);
 
   const handleSearch = (query: string) => {
     setSearchTerm(query);
@@ -50,34 +56,55 @@ const PantaiSection = () => {
       <HeaderSearch
         onSearch={handleSearch}
         onMapClick={handleMapClick}
-        description={
-          <>
-            Nikmati pesona pantai terbaik dengan informasi kebersihan real-time
-            dan tantangan seru untuk menjaganya tetap bersih.
-          </>
-        }
         title={
           <>
-            Temukan Pantai <span className="font-fraunces italic">Indah</span> &{" "}
-            <span className="font-fraunces italic">Bersih</span> di Sekitarmu!
+            Temukan{" "}
+            <span className="font-fraunces italic">Mitra HaloSegara </span>di
+            Sekitarmu!
+          </>
+        }
+        description={
+          <>
+            Dapatkan kemudahan menukar sampah yang kamu kumpulkan dengan
+            berbagai reward menarik di lokasi mitra pilihan kami.
           </>
         }
         imageSrc={headerImage}
       />
 
-      <section className="flex flex-col gap-10 py-14 px-20">
-        <div className="grid grid-cols-4 gap-x-12 gap-y-8">
+      <section className="flex flex-col px-20 pt-10 pb-20 gap-10">
+        <div className="grid grid-cols-2 gap-8">
           {currentItems.length > 0 ? (
-            currentItems.map((beach) => (
-              <BeachCard
-                key={beach.id}
-                title={beach.title}
-                location={beach.location}
-                imageUrl={beach.imageUrl}
-              />
+            currentItems.map((item) => (
+              <div
+                className="flex flex-col font-inter rounded-4xl shadow-lg bg-white w-[550px] h-[450px] overflow-hidden"
+                key={item.id}
+              >
+                <img
+                  src={item.imageUrl}
+                  alt={item.title}
+                  className="w-full h-[240px] object-cover"
+                />
+                <div className="flex flex-col gap-[60px] px-5 py-6">
+                  <div className="flex flex-col gap-2">
+                    <h3 className="font-semibold text-2xl">{item.title}</h3>
+                    <div className="flex items-center gap-1">
+                      <MapPin className="text-danger500 w-4 h-4" />
+                      <p className="text-sm text-neutral800">{item.location}</p>
+                    </div>
+                  </div>
+                  <Button
+                    className="bg-primary500 hover:bg-primary700 transition-all duration-300 ease-in-out text-white font-semibold rounded-4xl flex items-center justify-center py-3 px-6 text-base w-full cursor-pointer"
+                    onClick={handleMapClick}
+                  >
+                    Lihat Lokasi
+                    <CircleArrowRight className="w-4 h-4 ml-1" />
+                  </Button>
+                </div>
+              </div>
             ))
           ) : (
-            <p className="text-black col-span-4 text-center font-semibold text-5xl leading-tight">
+            <p className="text-black col-span-2 text-center font-semibold text-5xl leading-tight">
               Woopss.. Maaf Ya Pantai Yang Kamu Cari Tidak Ada
             </p>
           )}
@@ -140,4 +167,4 @@ const PantaiSection = () => {
   );
 };
 
-export default PantaiSection;
+export default MitraContent;

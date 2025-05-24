@@ -1,13 +1,21 @@
-import image from "../../assets/Header.jpg";
 import { MapPin, Search } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 interface HeaderSearchProps {
   onSearch: (query: string) => void;
   onMapClick?: () => void;
+  title: ReactNode;
+  description: ReactNode;
+  imageSrc: string;
 }
 
-const HeaderSearch = ({ onSearch, onMapClick }: HeaderSearchProps) => {
+const HeaderSearch = ({
+  onSearch,
+  onMapClick,
+  title,
+  description,
+  imageSrc
+}: HeaderSearchProps) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (e: React.FormEvent) => {
@@ -18,24 +26,22 @@ const HeaderSearch = ({ onSearch, onMapClick }: HeaderSearchProps) => {
   return (
     <section className="relative flex flex-col justify-center items-center rounded-ee-[100px] rounded-es-[100px] mb-10 overflow-hidden h-screen">
       <img
-        src={image}
+        src={imageSrc}
         alt="Hero Section"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/60" />
       <div className="relative z-10 flex flex-col gap-6 justify-center items-center text-center text-white px-4">
         <h1 className="font-bold text-[40px] leading-tight max-w-[950px]">
-          Temukan Pantai
-          <span className="font-fraunces italic"> Indah </span>&
-          <span className="font-fraunces italic"> Bersih </span> di Sekitarmu!
+          {title}
         </h1>
-        <p className="text-base max-w-[750px] leading-relaxed">
-          Nikmati pesona pantai terbaik dengan informasi kebersihan real-time
-          dan tantangan seru untuk menjaganya tetap bersih.
-        </p>
+        <p className="text-base max-w-[750px] leading-relaxed">{description}</p>
 
         {/* Search form */}
-        <form onSubmit={handleSearch} className="flex gap-3 w-full max-w-[740px] mt-6">
+        <form
+          onSubmit={handleSearch}
+          className="flex gap-3 w-full max-w-[740px] mt-6"
+        >
           <div className="relative flex-1">
             <input
               type="text"
@@ -55,7 +61,7 @@ const HeaderSearch = ({ onSearch, onMapClick }: HeaderSearchProps) => {
           <button
             type="button"
             onClick={onMapClick}
-            className="flex items-center gap-3 border-1 border-neutral100 bg-white hover:bg-neutral50 transition-all duration-300 text-neutral300 rounded-sm px-3 py-2 text-sm font-inter cursor-pointer" 
+            className="flex items-center gap-3 border-1 border-neutral100 bg-white hover:bg-neutral50 transition-all duration-300 text-neutral300 rounded-sm px-3 py-2 text-sm font-inter cursor-pointer"
           >
             Pilih Lewat Peta
             <MapPin className="w-5 h-5" color="#444955" />
